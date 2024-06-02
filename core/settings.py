@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["content-metrics-tracker.herokuapp.com"]
+ALLOWED_HOSTS = ["content-metrics-tracker-adb5d4e462a6.herokuapp.com"]
 
 
 # Application definition
