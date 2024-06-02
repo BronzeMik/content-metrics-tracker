@@ -1,0 +1,43 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% block content %}
+<div class="d-flex">
+    {% include 'layouts/sidebar.html' %}
+    <div class="w-100">
+        {% include 'layouts/header.html' %}
+        <div class="my-4 mx-4">
+            <h2 class="text-center">Report</h2>
+            <canva id="datatable"></canva>
+        </div>
+    </div>
+</div>
+    <table class="datatable"></table>
+{% endblock content %}
+{% block scripts %}
+<script>
+  const datatable = document.getElementById('datatable');
+
+const dataTable = new simpleDatatables.DataTable("#datatable", {
+  searchable: true,
+  fixedHeight: true,
+  data: {
+    headings: ["Video Title", "Published Date", "Views Count"]
+  }
+})
+
+let newRows = [
+  ["Top 10 VS Code shortcuts", "15-11-2022", "451234"],
+  ["Djngo basics tutorial", "05-09-2021", "451234"],
+  ["Web design for beginners", "15-1-2020", "561671"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+  ["SQL top tips", "01-22-2019", "1000000"],
+];
+dataTable.insert({data: newRows})
+</script>
+{% endblock scripts %}
